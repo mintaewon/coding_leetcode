@@ -1,25 +1,21 @@
 ''''
 
-투포인터로 접근했으나 시간초과 간당간당함
+이중 for문 접근했으나
 
-밑에 O(n^2) 보다 빠른 방법을 사용해야된다고 나와있음
-
-이중 for문을 줄이기 위해 target에서 빼준 값을 저장 후 공백으로 만들어 in 연산
+밑에 O(n^2) 보다 빠른 방법을 고려할 수 있다고함
 
 '''
 
-# 투포인터 - 시간초과
+# 이중 for문
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        for start in range(len(nums)-1):
-            end=start+1
-            while end<len(nums):
-                if nums[start]+nums[end] == target:
-                    return [start, end]
-                end+=1
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i]+nums[j] == target:
+                    return [i,j]
 
 
-# 최종
+# target에서 빼준 값을 저장 후 공백으로 만들어 in 연산
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)):

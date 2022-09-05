@@ -4,6 +4,8 @@
 
 밑에 O(n^2) 보다 빠른 방법을 사용해야된다고 나와있음
 
+이중 for문을 줄이기 위해 target에서 빼준 값을 저장 후 공백으로 만들어 in 연산
+
 '''
 
 # 투포인터 - 시간초과
@@ -17,7 +19,7 @@ class Solution:
                 end+=1
 
 
-# target에서 빼준 값을 저장 후 공백으로 만들어 in 연산
+# 최종
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         for i in range(len(nums)):
